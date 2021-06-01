@@ -24,7 +24,8 @@ class HomeController extends Controller
                 ->where('tanggal_surat', '<', Carbon::now()->endOfWeek())
                 ->count();
             $monthsm = SuratMasuk::whereMonth('tanggal_surat',Carbon::now())->count();
-            $monthsmlast = SuratMasuk::whereMonth('tanggal_surat',Carbon::now()->subMonth())->count();
+            $thisyearsm = SuratMasuk::whereYear('tanggal_surat',Carbon::now()->format('Y'))->count();
+            $monthsmlast = $thisyearsm-$monthsm;
 
             //surat keluar dashboard
             $todaysk = SuratKeluar::whereDate('tanggal_surat',Carbon::today())->count();
@@ -32,7 +33,8 @@ class HomeController extends Controller
                 ->where('tanggal_surat', '<', Carbon::now()->endOfWeek())
                 ->count();
             $monthsk = SuratKeluar::whereMonth('tanggal_surat',Carbon::now())->count();
-            $monthsklast = SuratKeluar::whereMonth('tanggal_surat',Carbon::now()->subMonth())->count();
+            $thisyearsk = SuratKeluar::whereYear('tanggal_surat',Carbon::now()->format('Y'))->count();
+            $monthsklast = $thisyearsk-$monthsk;
 
             //surat pelayanan dashboard
             $todaysp = SuratPelayanan::whereDate('tanggal_surat',Carbon::today())->count();
@@ -40,7 +42,9 @@ class HomeController extends Controller
                 ->where('tanggal_surat', '<', Carbon::now()->endOfWeek())
                 ->count();
             $monthsp = SuratPelayanan::whereMonth('tanggal_surat',Carbon::now())->count();
-            $monthsplast = SuratPelayanan::whereMonth('tanggal_surat',Carbon::now()->subMonth())->count();
+            $thisyearsp = SuratPelayanan::whereYear('tanggal_surat',Carbon::now()->format('Y'))->count();
+            $monthsplast = $thisyearsp-$monthsp;
+
 
         if(Auth::user()->role == 'admin') {
             
