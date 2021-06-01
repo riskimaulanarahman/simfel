@@ -20,7 +20,7 @@
 					</ul>
 				</div>
 				<div class="stats-link">
-					<a href="javascript:;">View Detail <i class="fa fa-arrow-alt-circle-right"></i></a>
+					<a href="/surat-masuk">View Detail <i class="fa fa-arrow-alt-circle-right"></i></a>
 				</div>
 			</div>
 		</div>
@@ -39,7 +39,7 @@
 					</ul>
 				</div>
 				<div class="stats-link">
-					<a href="javascript:;">View Detail <i class="fa fa-arrow-alt-circle-right"></i></a>
+					<a href="/surat-keluar">View Detail <i class="fa fa-arrow-alt-circle-right"></i></a>
 				</div>
 			</div>
 		</div>
@@ -58,7 +58,7 @@
 					</ul>
 				</div>
 				<div class="stats-link">
-					<a href="javascript:;">View Detail <i class="fa fa-arrow-alt-circle-right"></i></a>
+					<a href="/surat-pelayanan">View Detail <i class="fa fa-arrow-alt-circle-right"></i></a>
 				</div>
 			</div>
 		</div>

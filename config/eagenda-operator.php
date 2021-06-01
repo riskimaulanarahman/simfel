@@ -16,7 +16,7 @@ return [
         [
             'icon' => 'fa fa-th-large',
             'title' => 'Dashboard',
-            'url' => 'operator/',
+            'url' => '/',
         ],[
             'icon' => 'fa fa-hdd',
             'title' => 'Master Data',
