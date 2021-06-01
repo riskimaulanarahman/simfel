@@ -12,7 +12,7 @@
 # /.vscode
 .env
 # .gitattributes
-# .gitignore
+.gitignore
 # .htaccess
 # artisan
 # composer.json

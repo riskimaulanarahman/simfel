@@ -18,7 +18,7 @@ class HomeController extends Controller
 
     public function index(){
 
-            //surat masuk dashboard
+            //surat masuk dashboard 1
             $todaysm = SuratMasuk::whereDate('tanggal_surat',Carbon::today())->count();
             $weeksm =    SuratMasuk::where('tanggal_surat', '>', Carbon::now()->startOfWeek())
                 ->where('tanggal_surat', '<', Carbon::now()->endOfWeek())
