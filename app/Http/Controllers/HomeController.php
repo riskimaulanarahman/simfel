@@ -36,7 +36,7 @@ class HomeController extends Controller
             $thisyearsk = SuratKeluar::whereYear('tanggal_surat',Carbon::now()->format('Y'))->count();
             $monthsklast = $thisyearsk-$monthsk;
 
-            //surat pelayanan dashboard
+            //surat pelayanan dashboard 2
             $todaysp = SuratPelayanan::whereDate('tanggal_surat',Carbon::today())->count();
             $weeksp =    SuratPelayanan::where('tanggal_surat', '>', Carbon::now()->startOfWeek())
                 ->where('tanggal_surat', '<', Carbon::now()->endOfWeek())
