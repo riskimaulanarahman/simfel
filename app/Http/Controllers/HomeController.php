@@ -19,12 +19,12 @@ class HomeController extends Controller
     public function index(){
 
             //surat masuk dashboard 1
-            $todaysm = SuratMasuk::whereDate('tanggal_surat',Carbon::today())->count();
-            $weeksm =    SuratMasuk::where('tanggal_surat', '>', Carbon::now()->startOfWeek())
-                ->where('tanggal_surat', '<', Carbon::now()->endOfWeek())
+            $todaysm = SuratMasuk::whereDate('tanggal_terima_surat',Carbon::today())->count();
+            $weeksm =    SuratMasuk::where('tanggal_terima_surat', '>', Carbon::now()->startOfWeek())
+                ->where('tanggal_terima_surat', '<', Carbon::now()->endOfWeek())
                 ->count();
-            $monthsm = SuratMasuk::whereMonth('tanggal_surat',Carbon::now())->count();
-            $thisyearsm = SuratMasuk::whereYear('tanggal_surat',Carbon::now()->format('Y'))->count();
+            $monthsm = SuratMasuk::whereMonth('tanggal_terima_surat',Carbon::now())->count();
+            $thisyearsm = SuratMasuk::whereYear('tanggal_terima_surat',Carbon::now()->format('Y'))->count();
             $monthsmlast = $thisyearsm-$monthsm;
 
             //surat keluar dashboard
