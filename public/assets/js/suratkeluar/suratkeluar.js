@@ -128,6 +128,7 @@ $(document).ready(function(){
                 },{ 
                     dataField: "tanggal_surat",
                     width: 150,
+                    sortIndex: 0, sortOrder: "desc",
                     dataType:"date", format:"dd-MM-yyyy"
                 },{ 
                     dataField: "tujuan_surat",
