@@ -127,6 +127,7 @@ $(document).ready(function(){
                     width: 150,
                 },{ 
                     dataField: "tanggal_surat",
+		    sortIndex: 0, sortOrder: "asc",
                     width: 150,
                     dataType:"date", format:"dd-MM-yyyy",displayFormat: "dd-MM-yyyy",
                 },{ 
