@@ -132,7 +132,7 @@ $(document).ready(function(){
                 },{ 
                     dataField: "tanggal_terima_surat",
                     width: 150,
-		    sortIndex: 0, sortOrder: "desc",
+		            sortIndex: 0, sortOrder: "asc",
                     dataType:"date", format:"dd-MM-yyyy",displayFormat: "dd-MM-yyyy",
                 },{ 
                     dataField: "asal_surat",
