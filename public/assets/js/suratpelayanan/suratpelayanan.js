@@ -124,7 +124,7 @@ $(document).ready(function(){
                 },{ 
                     dataField: "tanggal_surat",
                     width: 150,
-                    sortIndex: 0, sortOrder: "desc",
+                    sortIndex: 0, sortOrder: "desc", //tambah
                     dataType:"date", format:"dd-MM-yyyy",
                 },{ 
                     dataField: "nama_pejabat_pembuat",
