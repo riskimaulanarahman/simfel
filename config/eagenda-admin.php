@@ -92,7 +92,7 @@ return [
         ],[
             'icon' => 'fa fa-question-circle',
             'title' => 'Bantuan',
-            'url' => 'javascript:;',
+            'url' => '/bantuan',
         ]
     ]
 ];

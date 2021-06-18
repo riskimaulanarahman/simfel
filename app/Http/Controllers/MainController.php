@@ -3,6 +3,11 @@ namespace App\Http\Controllers;
 
 
 class MainController extends Controller {
+
+    public function bantuan() {
+        return view('pages/bantuan/home-bantuan');
+    }
+
     public function dashboardV1() {
         return view('pages/dashboard-v1');
     }

@@ -33,6 +33,9 @@ Route::group( ['as' => 'admin.','middleware' => ['auth']], function() {
     //master user
     Route::get('/master-user','masteruser\LoginUserController@show')->name('masteruser');
 
+    Route::get('/bantuan', 'MainController@bantuan')->name('bantuan');
+
+
     
 });
 
