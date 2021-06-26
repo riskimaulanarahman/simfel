@@ -44,6 +44,10 @@ return [
                     'route-name' => 'admin.suratpelayanan'
                 ]]
             ]]
+        ],[
+            'icon' => 'fa fa-question-circle',
+            'title' => 'Bantuan',
+            'url' => '/bantuan',
         ]
     ]
 ];
