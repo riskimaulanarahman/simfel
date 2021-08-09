@@ -5,7 +5,7 @@ namespace App\Http\Controllers\masterdatasurat\suratkeluar;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\SuratKeluar;
-
+use Auth;
 
 class SuratkeluarController extends Controller
 {
@@ -16,8 +16,13 @@ class SuratkeluarController extends Controller
      */
     public function index()
     {
+        $user = Auth::user();
         try {
-            $data = SuratKeluar::all();
+            if($user->role !== 'admin') {
+                $data = SuratKeluar::where('id_users',$user->id)->get();
+            } else {
+                $data = SuratKeluar::all();
+            }
 
             return response()->json(['status' => "show", "message" => "Menampilkan Data" , 'data' => $data]);
 
@@ -35,11 +40,14 @@ class SuratkeluarController extends Controller
      */
     public function store(Request $request)
     {
+        $user = Auth::user();
+
         $date = $request->tanggal_surat;
         $fixed = date('Y-m-d', strtotime(substr($date,0,10)));
 
         $requestData = $request->all();
         $requestData['tanggal_surat'] = $fixed;
+        $requestData['id_users'] = $user->id;
         
         try {
             SuratKeluar::create($requestData);

@@ -7,7 +7,7 @@
         method = method || "GET";
     
     
-        $.ajax(url, 
+        $.ajax(url+'?_token=' + '{{ csrf_token() }}', 
         {
             method: method || "GET",
             data: data,
@@ -100,6 +100,17 @@
             }
         }),
         sort: "nama_jenis_surat_pelayanan"
+    }
+
+    listJabatan = {
+        store: new DevExpress.data.CustomStore({
+            key: "id_jabatan",
+            loadMode: "raw",
+            load: function() {
+                return $.post(apiurl + "/list-jabatan");
+            }
+        }),
+        sort: "nama_jabatan"
     }
     
     

@@ -19,7 +19,7 @@ return [
             'url' => '/',
             'route-name' => 'admin.index'
         ],[
-                'icon' => 'fa fa-archive',
+                'icon' => 'fa fa-folder',
                 'title' => 'Master Data',
                 'url' => 'javascript:;',
                 'caret' => true,
@@ -35,15 +35,17 @@ return [
                     [
                         'url' => 'javascript:;',
                         'title' => 'Master Data Pegawai'
-                    ],
+                    ]]
+            ],[
+                'icon' => 'fa fa-file-alt',
+                'title' => 'Master Surat',
+                'url' => 'javascript:;',
+                'caret' => true,
+                'sub_menu' => [
                     [
-                    'url' => 'javascript:;',
-                    'title' => 'Master Data Surat',
-                    'sub_menu' => [[
                         'url' => '/surat-masuk',
                         'title' => 'Surat Masuk',
                         'route-name' => 'admin.suratmasuk'
-
                     ],[
                         'url' => '/surat-keluar',
                         'title' => 'Surat Keluar',
@@ -57,7 +59,25 @@ return [
                         'title' => 'Surat Vital',
                         'route-name' => 'admin.suratvital'
                     ]]
-                ]]
+            ],[
+                'icon' => 'fa fa-archive',
+                'title' => 'Master Arsip',
+                'url' => 'javascript:;',
+                'caret' => true,
+                'sub_menu' => [
+                    [
+                        'url' => 'javascript:;',
+                        'title' => 'Daftar Arsip Aktif',
+                    ],[
+                        'url' => 'javascript:;',
+                        'title' => 'Daftar Arsip Inaktif',
+                    ],[
+                        'url' => 'javascript:;',
+                        'title' => 'Daftar Arsip Vital',
+                    ],[
+                        'url' => 'javascript:;',
+                        'title' => 'Daftar Arsip Pelayanan',
+                    ]]
         ],[
             'icon' => 'fa fa-file',
             'title' => 'SOP',

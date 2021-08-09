@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\SuratMasuk;
 use Illuminate\Support\Carbon;
 use DateTime;
+use Auth;
 
 class SuratmasukController extends Controller
 {
@@ -17,8 +18,13 @@ class SuratmasukController extends Controller
      */
     public function index()
     {
+        $user = Auth::user();
         try {
-            $data = SuratMasuk::all();
+            if($user->role !== 'admin') {
+                $data = SuratMasuk::where('id_users',$user->id)->get();
+            } else {
+                $data = SuratMasuk::all();
+            }
 
             return response()->json(['status' => "show", "message" => "Menampilkan Data" , 'data' => $data]);
 
@@ -36,6 +42,8 @@ class SuratmasukController extends Controller
      */
     public function store(Request $request)
     {
+        $user = Auth::user();
+
         $date = $request->tanggal_surat;
         $fixed = date('Y-m-d', strtotime(substr($date,0,10)));
         $date2 = $request->tanggal_terima_surat;
@@ -48,6 +56,7 @@ class SuratmasukController extends Controller
         if($date2) {
             $requestData['tanggal_terima_surat'] = $fixed2;
         }
+        $requestData['id_users'] = $user->id;
         
         try {
             SuratMasuk::create($requestData);

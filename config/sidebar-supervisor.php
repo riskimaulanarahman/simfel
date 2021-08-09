@@ -23,10 +23,11 @@ return [
             'url' => 'javascript:;',
             'caret' => true,
             'sub_menu' => [
+                // [
+                //     'url' => 'javascript:;',
+                //     'title' => 'Master Data Penduduk'
+                // ],
                 [
-                    'url' => 'javascript:;',
-                    'title' => 'Master Data Penduduk'
-                ],[
                 'url' => 'javascript:;',
                 'title' => 'Master Data Surat',
                 'sub_menu' => [[
@@ -42,6 +43,10 @@ return [
                     'url' => '/surat-pelayanan',
                     'title' => 'Surat Pelayanan',
                     'route-name' => 'admin.suratpelayanan'
+                ],[
+                    'url' => '/surat-vital',
+                    'title' => 'Surat Vital',
+                    'route-name' => 'admin.suratvital'
                 ]]
             ]]
         ],[

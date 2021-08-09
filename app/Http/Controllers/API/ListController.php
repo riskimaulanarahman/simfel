@@ -21,4 +21,8 @@ class ListController extends Controller
         return DB::table('ref_jenis_surat_pelayanan')->select('id_jenis_surat_pelayanan','nama_jenis_surat_pelayanan')->get();
     }
 
+    public function listJabatan() {
+        return DB::table('ref_jabatan')->select('id_jabatan','nama_jabatan')->get();
+    }
+
 }

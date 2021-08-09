@@ -15,12 +15,22 @@
         }
     });
 
+    function moveEditColumnToLeft(dataGrid) {
+		dataGrid.columnOption("command:edit", { 
+			visibleIndex: -1,
+			width: 80 
+		});
+    }
+
     RoleType = [{id:1,roletype:"admin"},{id:2,roletype:"supervisor"},{id:3,roletype:"operator"}];
     // attribute
     var dataGrid = $("#master-user").dxDataGrid({    
         dataSource: store,
-        columnsAutoWidth: false,
-        columnHidingEnabled: false,
+        allowColumnReordering: true,
+        allowColumnResizing: true,
+        columnsAutoWidth: true,
+        columnMinWidth: 80,
+        wordWrapEnabled: true,
         showBorders: true,
         filterRow: { visible: true },
         filterPanel: { visible: true },
@@ -29,6 +39,7 @@
             mode: "multiple"
         },
         editing: {
+            useIcons:true,
             mode: "popup",
             allowAdding: true,
             allowUpdating: true,
@@ -124,9 +135,15 @@
             },
             { 
                 dataField: "jabatan",
+                editorType: "dxSelectBox",
                 validationRules: [
                     { type: "required" }
-                ]
+                ],
+                editorOptions: {
+                    dataSource: listJabatan,  
+                    valueExpr: 'nama_jabatan',
+                    displayExpr: 'nama_jabatan',
+                },
             },
             { 
                 dataField: "nomor_hp",
@@ -143,6 +160,9 @@
             fileName: "master-user",
             excelFilterEnabled: true,
             allowExportSelectedData: true
+        },
+        onContentReady: function(e){
+            moveEditColumnToLeft(e.component);
         },
         onEditorPreparing: function(e) {
             if (e.dataField === "password" && e.parentType === "dataRow") {

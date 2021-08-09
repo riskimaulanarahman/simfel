@@ -24,7 +24,7 @@
 			<!-- end panel-heading -->
 			<!-- begin panel-body -->
 			<div class="panel-body">
-                <embed src="upload/bantuan/panduan.pdf" width="100%" height="2100px" />
+                {{-- <embed src="upload/bantuan/panduan.pdf" width="100%" height="2100px" /> --}}
 			</div>
 			<!-- end panel-body -->
 		</div>

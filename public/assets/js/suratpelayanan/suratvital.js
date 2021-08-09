@@ -84,11 +84,14 @@ $(document).ready(function(){
             selection: {
                 mode: "multiple"
             },
+            columnFixing: { 
+                enabled: true
+            },
             editing: {
                 useIcons:true,
                 mode: "popup",
-                allowAdding:  (role=="admin" || role == "operator")?true:false,
-                allowUpdating: (role=="admin" || role == "operator")?true:false,
+                allowAdding:  (role=="admin" || role == "supervisor")?true:false,
+                allowUpdating: (role=="admin" || role == "supervisor")?true:false,
                 allowDeleting: false
             },
             scrolling: {
@@ -97,13 +100,15 @@ $(document).ready(function(){
             columns: [
                 {
                     caption: '#',formItem: {visible:false},width:40,
+                    fixed: true,
                     cellTemplate:function(container,options) {
                         container.text(options.rowIndex +1);
                     }
                 },{
                     caption: 'Tambah/Edit Berkas',
-                    visible: (role=="admin" || role == "operator")?true:false,
+                    visible: (role=="admin" || role == "supervisor")?true:false,
                     formItem: {visible:false},
+                    fixed: true,
                     editorOptions: {
                         disabled: true
                     },
@@ -117,6 +122,7 @@ $(document).ready(function(){
                     }
                 },{ 
                     dataField: "nomor_surat",
+                    fixed: true,
                     width: 150,
                 },
                 { 
@@ -205,12 +211,11 @@ $(document).ready(function(){
                     dataField: "maksud_4",
                     width: 150,
                 },{ 
-                    dataField: "status_approval",
-                    width: 150,
-                },{ 
                     dataField: "lampiran",
                     width: 150,
                     formItem: {visible:false},
+                    fixed: true,
+                    fixedPosition: "right",
                     editorOptions: {
                         disabled: true
                     },

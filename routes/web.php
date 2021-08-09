@@ -36,6 +36,12 @@ Route::group( ['as' => 'admin.','middleware' => ['auth']], function() {
 
     Route::get('/bantuan', 'MainController@bantuan')->name('bantuan');
 
+    //api
+    Route::apiResource('/api/surat-masuk','masterdatasurat\suratmasuk\SuratmasukController');
+    Route::apiResource('/api/surat-keluar','masterdatasurat\suratkeluar\SuratkeluarController');
+    Route::apiResource('/api/surat-pelayanan','masterdatasurat\suratpelayanan\SuratpelayananController');
+    Route::apiResource('/api/surat-vital','masterdatasurat\suratpelayanan\SuratvitalController');
+
 
     
 });

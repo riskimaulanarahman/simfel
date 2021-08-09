@@ -4,9 +4,7 @@
 
 @section('content')
 
-<div class="row">
 
-	<div class="col-xl-12">
 		<!-- begin panel -->
 		<div class="panel panel-inverse">
 			<!-- begin panel-heading -->
@@ -24,16 +22,11 @@
 			<!-- end panel-heading -->
 			<!-- begin panel-body -->
 			<div class="panel-body">
-                <div id="master-user" style="height: 500px;">
+                <div id="master-user" style="height: 640px; width:100%;"></div>
 			</div>
 			<!-- end panel-body -->
 		</div>
 		<!-- end panel -->
-	</div>
-	<!--  -->
-
-</div>
-
 
 @endsection
 

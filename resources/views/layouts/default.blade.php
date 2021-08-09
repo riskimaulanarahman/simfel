@@ -42,7 +42,8 @@
 			@yield('content')
 		</div>
 		
-		@includeWhen($footer, 'includes.footer')
+		{{-- @includeWhen($footer, 'includes.footer') --}}
+		@include('includes.footer')
 		
 		@include('includes.component.theme-panel')
 		
