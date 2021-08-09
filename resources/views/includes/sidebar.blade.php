@@ -82,13 +82,13 @@
 				}
 
 				if(Auth::user()->role == 'admin') {
-					$optmenu = 'eagenda-admin.menu';
+					$optmenu = 'sidebar-admin.menu';
 				} elseif(Auth::user()->role == 'supervisor') {
-					$optmenu = 'eagenda-supervisor.menu';
+					$optmenu = 'sidebar-supervisor.menu';
 				} elseif(Auth::user()->role == 'operator') {
-					$optmenu = 'eagenda-operator.menu';
+					$optmenu = 'sidebar-operator.menu';
 				} else {
-					$optmenu = 'eagenda-guest.menu';
+					$optmenu = 'sidebar-guest.menu';
 				}
 				
 				foreach (config($optmenu) as $key => $menu) {

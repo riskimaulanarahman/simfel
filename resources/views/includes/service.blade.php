@@ -90,6 +90,17 @@
         }),
         sort: "status_pengguna"
     }
+
+    listSuratpelayanan = {
+        store: new DevExpress.data.CustomStore({
+            key: "id_jenis_surat_pelayanan",
+            loadMode: "raw",
+            load: function() {
+                return $.post(apiurl + "/list-suratpelayanan");
+            }
+        }),
+        sort: "nama_jenis_surat_pelayanan"
+    }
     
     
     //log
@@ -130,4 +141,4 @@
         return d.promise();
     
     }
-    </script>
+</script>

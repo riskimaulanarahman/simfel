@@ -5,16 +5,16 @@ $(document).ready(function(){
     var store = new DevExpress.data.CustomStore({
         key: "id_surat_pelayanan",
         load: function() {
-            return sendRequest(apiurl + "/surat-pelayanan");
+            return sendRequest(apiurl + "/surat-vital");
         },
         insert: function(values) {
-            return sendRequest(apiurl + "/surat-pelayanan", "POST", values);
+            return sendRequest(apiurl + "/surat-vital", "POST", values);
         },
         update: function(key, values) {
-            return sendRequest(apiurl + "/surat-pelayanan/"+key, "PUT", values);
+            return sendRequest(apiurl + "/surat-vital/"+key, "PUT", values);
         },
         remove: function(key) {
-            return sendRequest(apiurl + "/surat-pelayanan/"+key, "DELETE");
+            return sendRequest(apiurl + "/surat-vital/"+key, "DELETE");
         }
     });
     
@@ -70,7 +70,7 @@ $(document).ready(function(){
         popup.show();
     };
 
-        var dataGrid = $("#grid-suratpelayanan").dxDataGrid({     
+        var dataGrid = $("#grid-suratvital").dxDataGrid({     
             dataSource: store,
             allowColumnReordering: true,
             allowColumnResizing: true,
@@ -224,7 +224,7 @@ $(document).ready(function(){
             ],
             export: {
                 enabled: true,
-                fileName: "surat-pelayanan",
+                fileName: "surat-vital",
                 excelFilterEnabled: true,
                 allowExportSelectedData: true
             },
