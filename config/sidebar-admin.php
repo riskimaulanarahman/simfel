@@ -103,10 +103,10 @@ return [
                             'title' => 'Kenaikan Pangkat',
                         ],[
                             'url' => 'javascript:;',
-                            'title' => 'SKP',
+                            'title' => 'SPK',
                         ],[
                             'url' => 'javascript:;',
-                            'title' => 'SKP Non PNS',
+                            'title' => 'SPK Non PNS',
                         ],[
                             'url' => 'javascript:;',
                             'title' => 'Struktur Kelurahan',
