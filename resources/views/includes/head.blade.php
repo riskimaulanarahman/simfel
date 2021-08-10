@@ -9,6 +9,6 @@
 <link href="/assets/css/material/app.min.css" rel="stylesheet" />
 <!-- ================== END BASE CSS STYLE ================== -->
 <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/20.2.5/css/dx.common.css">
-<link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/20.2.5/css/dx.light.css">
+<link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/20.2.5/css/dx.material.orange.light.compact.css">
 
 @stack('css')
