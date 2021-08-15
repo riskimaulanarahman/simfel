@@ -97,18 +97,18 @@ $(document).ready(function(){
                 allowUpdating: (role=="admin" || role == "supervisor")?true:false,
                 allowDeleting: false
             },
-            scrolling: {
-                mode: "infinite"
-            },
+            // scrolling: {
+            //     mode: "infinite"
+            // },
             pager: {
-                allowedPageSizes: [5, 8, 15, 30],
+                allowedPageSizes: [5, 10, 15, 30],
                 showInfo: true,
                 showNavigationButtons: true,
                 showPageSizeSelector: true,
                 visible: true
             },
             paging: {
-                pageSize: 8
+                pageSize: 5
             },
             columns: [
                 // {

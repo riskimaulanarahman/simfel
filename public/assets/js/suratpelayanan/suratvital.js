@@ -94,21 +94,37 @@ $(document).ready(function(){
                 allowUpdating: (role=="admin" || role == "supervisor")?true:false,
                 allowDeleting: false
             },
-            scrolling: {
-                mode: "infinite"
+            // scrolling: {
+            //     mode: "infinite"
+            // },
+            pager: {
+                allowedPageSizes: [5, 10, 15, 30],
+                showInfo: true,
+                showNavigationButtons: true,
+                showPageSizeSelector: true,
+                visible: true
+            },
+            paging: {
+                pageSize: 5
             },
             columns: [
+                // {
+                //     caption: '#',formItem: {visible:false},width:40,
+                //     fixed: true,
+                //     cellTemplate:function(container,options) {
+                //         container.text(options.rowIndex +1);
+                //     }
+                // },
+                { 
+                    dataField: "nomor_surat",
+                    fixed: false,
+                    width: 150,
+                },
                 {
-                    caption: '#',formItem: {visible:false},width:40,
-                    fixed: true,
-                    cellTemplate:function(container,options) {
-                        container.text(options.rowIndex +1);
-                    }
-                },{
                     caption: 'Tambah/Edit Berkas',
                     visible: (role=="admin" || role == "supervisor")?true:false,
                     formItem: {visible:false},
-                    fixed: true,
+                    fixed: false,
                     editorOptions: {
                         disabled: true
                     },
@@ -120,10 +136,6 @@ $(document).ready(function(){
                     }).appendTo(container);
                     
                     }
-                },{ 
-                    dataField: "nomor_surat",
-                    fixed: true,
-                    width: 150,
                 },
                 { 
                     caption: "nama jenis surat pelayanan",
@@ -214,7 +226,7 @@ $(document).ready(function(){
                     dataField: "lampiran",
                     width: 150,
                     formItem: {visible:false},
-                    fixed: true,
+                    fixed: false,
                     fixedPosition: "right",
                     editorOptions: {
                         disabled: true

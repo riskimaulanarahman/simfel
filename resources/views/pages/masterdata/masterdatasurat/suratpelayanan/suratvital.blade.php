@@ -20,7 +20,7 @@
 			@if(Auth::user()->role == "supervisor" && (Auth::user()->jabatan == "Kasi Pemerintahan & PP" || Auth::user()->jabatan == "Kasi Trantip & LH"))
 				<h1>Anda Tidak Memiliki Akses</h1>
 			@else
-				<div id="grid-suratvital" style="height: 640px; width:100%;"></div>
+				<div id="grid-suratvital" style="height: 550px; width:100%;"></div>
 			@endif
 		</div>
 	</div>
