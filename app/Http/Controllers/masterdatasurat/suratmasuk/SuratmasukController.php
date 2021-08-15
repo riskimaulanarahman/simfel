@@ -23,7 +23,7 @@ class SuratmasukController extends Controller
             if($user->role !== 'admin') {
                 $data = SuratMasuk::where('id_users',$user->id)->get();
             } else {
-                $data = SuratMasuk::all();
+                $data = SuratMasuk::with('users')->get();
             }
 
             return response()->json(['status' => "show", "message" => "Menampilkan Data" , 'data' => $data]);

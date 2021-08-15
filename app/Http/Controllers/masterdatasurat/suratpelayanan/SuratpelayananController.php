@@ -20,6 +20,7 @@ class SuratpelayananController extends Controller
         try {
                 $data = SuratPelayanan::
                 whereNotIn('nama_jenis_surat_pelayanan',['Surat Pernyataan Ahli Waris','Surat Keterangan Cerai Ghaib','Surat Keterangan Pertanahan'])
+                ->with('users')
                 ->get();
         
 

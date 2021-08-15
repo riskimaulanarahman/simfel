@@ -13,4 +13,8 @@ class SuratMasuk extends Model
     protected $primaryKey = 'id_surat_masuk';
     protected $guarded = ['id_surat_masuk'];
 
+    public function users()
+    {
+        return $this->belongsTo('App\User','id_users','id');
+    }
 }

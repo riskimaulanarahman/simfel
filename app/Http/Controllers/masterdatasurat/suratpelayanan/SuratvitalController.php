@@ -23,10 +23,12 @@ class SuratvitalController extends Controller
                 ->whereIn('nama_jenis_surat_pelayanan',['Surat Keterangan Pertanahan'])
                 ->get();
             } else if($user->role == 'supervisor' && $user->jabatan == 'Kasi Pemberdayaan Masyarakat') {
-                $data = SuratPelayanan::whereIn('nama_jenis_surat_pelayanan',['Surat Pernyataan Ahli Waris','Surat Keterangan Cerai Ghaib'])->get();
+                $data = SuratPelayanan::where('id_users',$user->id)
+                ->whereIn('nama_jenis_surat_pelayanan',['Surat Pernyataan Ahli Waris','Surat Keterangan Cerai Ghaib'])
+                ->get();
             } else {
-                $data = SuratPelayanan::whereIn('id_users',$user->id)
-                ->whereIn('nama_jenis_surat_pelayanan',['Surat Pernyataan Ahli Waris','Surat Keterangan Cerai Ghaib','Surat Keterangan Pertanahan'])
+                $data = SuratPelayanan::whereIn('nama_jenis_surat_pelayanan',['Surat Pernyataan Ahli Waris','Surat Keterangan Cerai Ghaib','Surat Keterangan Pertanahan'])
+                ->with('users')
                 ->get();
             }
 

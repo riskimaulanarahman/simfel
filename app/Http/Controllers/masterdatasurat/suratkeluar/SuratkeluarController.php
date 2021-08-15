@@ -21,7 +21,7 @@ class SuratkeluarController extends Controller
             if($user->role !== 'admin') {
                 $data = SuratKeluar::where('id_users',$user->id)->get();
             } else {
-                $data = SuratKeluar::all();
+                $data = SuratKeluar::with('users')->get();
             }
 
             return response()->json(['status' => "show", "message" => "Menampilkan Data" , 'data' => $data]);

@@ -239,6 +239,14 @@ $(document).ready(function(){
                         
                     }
                 },
+                { 
+                    caption: "creator",
+                    visible: (role=="admin")?true:false,
+                    dataField: "users.nama_lengkap",
+                    formItem: {visible:false},
+                    fixed: false,
+                    width: 150,
+                },
                 
             ],
             export: {

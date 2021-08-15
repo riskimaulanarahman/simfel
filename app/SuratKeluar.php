@@ -12,4 +12,9 @@ class SuratKeluar extends Model
     protected $table = 'surat_keluar';
     protected $primaryKey = 'id_surat_keluar';
     protected $guarded = ['id_surat_keluar'];
+
+    public function users()
+    {
+        return $this->belongsTo('App\User','id_users','id');
+    }
 }

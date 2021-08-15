@@ -12,4 +12,9 @@ class SuratPelayanan extends Model
     protected $table = 'surat_pelayanan';
     protected $primaryKey = 'id_surat_pelayanan';
     protected $guarded = ['id_surat_pelayanan'];
+
+    public function users()
+    {
+        return $this->belongsTo('App\User','id_users','id');
+    }
 }

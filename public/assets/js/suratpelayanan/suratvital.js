@@ -115,6 +115,7 @@ $(document).ready(function(){
                 //         container.text(options.rowIndex +1);
                 //     }
                 // },
+                
                 { 
                     dataField: "nomor_surat",
                     fixed: false,
@@ -238,6 +239,14 @@ $(document).ready(function(){
                         $('<a href="/upload/'+options.data.lampiran+'" target="_blank">'+options.data.lampiran+'</a>').addClass('dx-link').appendTo(container);
                         
                     }
+                },
+                { 
+                    caption: "creator",
+                    visible: (role=="admin")?true:false,
+                    dataField: "users.nama_lengkap",
+                    formItem: {visible:false},
+                    fixed: false,
+                    width: 150,
                 },
                 
             ],
