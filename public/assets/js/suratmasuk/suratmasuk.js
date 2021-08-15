@@ -152,6 +152,7 @@ $(document).ready(function(){
                     width: 150,
 		            sortIndex: 0, sortOrder: "desc",
                     dataType:"date", format:"dd-MM-yyyy",displayFormat: "dd-MM-yyyy",
+                    validationRules: [{ type: "required" }]
                 },{ 
                     dataField: "asal_surat",
                     width: 150,

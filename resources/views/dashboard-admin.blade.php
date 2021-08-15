@@ -153,7 +153,7 @@
 						<li>Total : <b>0</b></li>
 						<br>
 					</div> --}}
-					{{-- <div class="stats-progress progress">
+					<div class="stats-progress progress">
 						<div class="progress-bar" style="width: 100%;"></div>
 					</div>
 					<div class="stats-desc">
@@ -163,7 +163,7 @@
 						<li>Bulan ini : <b>0</b></li>
 						<li>Total : <b>0</b></li>
 						<br>
-					</div> --}}
+					</div>
 
 				</div>
 			</div>
@@ -185,7 +185,7 @@
 						<li>Total : <b>{{$monthsplast}}</b></li>
 						<br>
 					</div>
-					{{-- <div class="stats-progress progress">
+					<div class="stats-progress progress">
 						<div class="progress-bar" style="width: 100%;"></div>
 					</div>
 					<div class="stats-desc">
@@ -196,6 +196,7 @@
 						<li>Total : <b>0</b></li>
 						<br>
 					</div>
+					{{-- 
 					<div class="stats-progress progress">
 						<div class="progress-bar" style="width: 100%;"></div>
 					</div> --}}

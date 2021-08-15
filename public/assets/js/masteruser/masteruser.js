@@ -41,9 +41,9 @@
         editing: {
             useIcons:true,
             mode: "popup",
-            allowAdding: true,
+            allowAdding: false,
             allowUpdating: true,
-            allowDeleting: true,
+            allowDeleting: false,
             popup: {
                 title: "User Info",
                 showTitle: true,

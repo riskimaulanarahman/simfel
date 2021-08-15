@@ -143,15 +143,17 @@ $(document).ready(function(){
                     width: 250,
                     editorType: "dxSelectBox",
                     editorOptions: {
-                        dataSource: listSuratpelayanan,  
+                        dataSource: listSuratvital,  
                         valueExpr: 'nama_jenis_surat_pelayanan',
                         displayExpr: 'nama_jenis_surat_pelayanan',
                     },
+                    validationRules: [{ type: "required" }]
                 },{ 
                     dataField: "tanggal_surat",
                     width: 150,
                     sortIndex: 0, sortOrder: "desc", //tambah
                     dataType:"date", format:"dd-MM-yyyy",
+                    validationRules: [{ type: "required" }]
                 },{ 
                     dataField: "nama_pejabat_pembuat",
                     width: 150,

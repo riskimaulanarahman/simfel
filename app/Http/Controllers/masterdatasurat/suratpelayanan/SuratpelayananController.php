@@ -18,11 +18,10 @@ class SuratpelayananController extends Controller
     {
         $user = Auth::user();
         try {
-            if($user->role !== 'admin') {
-                $data = SuratPelayanan::where('id_users',$user->id)->get();
-            } else {
-                $data = SuratPelayanan::all();
-            }
+                $data = SuratPelayanan::
+                whereNotIn('nama_jenis_surat_pelayanan',['Surat Pernyataan Ahli Waris','Surat Keterangan Cerai Ghaib','Surat Keterangan Pertanahan'])
+                ->get();
+        
 
             return response()->json(['status' => "show", "message" => "Menampilkan Data" , 'data' => $data]);
 

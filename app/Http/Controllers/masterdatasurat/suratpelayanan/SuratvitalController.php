@@ -18,10 +18,16 @@ class SuratvitalController extends Controller
     {
         $user = Auth::user();
         try {
-            if($user->role !== 'admin') {
-                $data = SuratPelayanan::where('id_users',$user->id)->where('nama_jenis_surat_pelayanan','Surat Pengantar Perkawinan')->get();
+            if($user->role == 'supervisor' && $user->jabatan == 'Kasi Pemerintahan & PP') {
+                $data = SuratPelayanan::where('id_users',$user->id)
+                ->whereIn('nama_jenis_surat_pelayanan',['Surat Keterangan Pertanahan'])
+                ->get();
+            } else if($user->role == 'supervisor' && $user->jabatan == 'Kasi Pemberdayaan Masyarakat') {
+                $data = SuratPelayanan::whereIn('nama_jenis_surat_pelayanan',['Surat Pernyataan Ahli Waris','Surat Keterangan Cerai Ghaib'])->get();
             } else {
-                $data = SuratPelayanan::where('nama_jenis_surat_pelayanan','Surat Pengantar Perkawinan')->get();
+                $data = SuratPelayanan::whereIn('id_users',$user->id)
+                ->whereIn('nama_jenis_surat_pelayanan',['Surat Pernyataan Ahli Waris','Surat Keterangan Cerai Ghaib','Surat Keterangan Pertanahan'])
+                ->get();
             }
 
             return response()->json(['status' => "show", "message" => "Menampilkan Data" , 'data' => $data]);

@@ -42,6 +42,9 @@ Route::group( ['as' => 'admin.','middleware' => ['auth']], function() {
     Route::apiResource('/api/surat-pelayanan','masterdatasurat\suratpelayanan\SuratpelayananController');
     Route::apiResource('/api/surat-vital','masterdatasurat\suratpelayanan\SuratvitalController');
 
+    //api list
+    Route::post('/api/list-suratpelayanan','API\ListController@listSuratPelayanan');
+    Route::post('/api/list-suratvital','API\ListController@listSuratVital');
 
     
 });

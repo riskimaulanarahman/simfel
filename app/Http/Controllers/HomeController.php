@@ -7,6 +7,7 @@ use Auth;
 use App\SuratMasuk;
 use App\SuratKeluar;
 use App\SuratPelayanan;
+use App\User;
 use Illuminate\Support\Carbon;
 
 class HomeController extends Controller
@@ -18,6 +19,11 @@ class HomeController extends Controller
 
     public function index(){
             $user = Auth::user();
+
+            $sekretaris = User::where('jabatan','Sekretaris')->first();
+            $kasipemerintahan = User::where('jabatan','Kasi Pemerintahan & PP')->first();
+            $kasitrantip = User::where('jabatan','Kasi Trantip & LH')->first();
+            $kasipemberdayaan = User::where('jabatan','Kasi Pemberdayaan Masyarakat')->first();
 
             if($user->role == 'admin') {
 
@@ -53,7 +59,8 @@ class HomeController extends Controller
                 
             } else {
                 //surat masuk dashboard 1
-                $todaysm = SuratMasuk::where('id_users',$user->id)->whereDate('tanggal_terima_surat',Carbon::today())->count();
+                $todaysm = SuratMasuk::where('id_users',$user->id)->whereDate('tanggal_terima_surat',Carbon::today())
+                ->count();
                 $weeksm =    SuratMasuk::where('id_users',$user->id)->where('tanggal_terima_surat', '>', Carbon::now()->startOfWeek())
                 ->where('tanggal_terima_surat', '<', Carbon::now()->endOfWeek())
                 ->count();
@@ -73,14 +80,41 @@ class HomeController extends Controller
                 $monthsklast = $thisyearsk;
                 
                 //surat pelayanan dashboard 2
-                $todaysp = SuratPelayanan::where('id_users',$user->id)->whereDate('tanggal_surat',Carbon::today())->count();
-                $weeksp =    SuratPelayanan::where('id_users',$user->id)->where('tanggal_surat', '>', Carbon::now()->startOfWeek())
-                ->where('tanggal_surat', '<', Carbon::now()->endOfWeek())
+                $todaysp = SuratPelayanan::where('id_users',$user->id)->whereDate('tanggal_surat',Carbon::today())
+                ->whereNotIn('nama_jenis_surat_pelayanan',['Surat Pernyataan Ahli Waris','Surat Keterangan Cerai Ghaib','Surat Keterangan Pertanahan'])
                 ->count();
-                $monthsp = SuratPelayanan::where('id_users',$user->id)->whereMonth('tanggal_surat',Carbon::now())->count();
-                $thisyearsp = SuratPelayanan::where('id_users',$user->id)->whereYear('tanggal_surat',Carbon::now()->format('Y'))->count();
+                $weeksp = SuratPelayanan::where('id_users',$user->id)->where('tanggal_surat', '>', Carbon::now()->startOfWeek())
+                ->where('tanggal_surat', '<', Carbon::now()->endOfWeek())
+                ->whereNotIn('nama_jenis_surat_pelayanan',['Surat Pernyataan Ahli Waris','Surat Keterangan Cerai Ghaib','Surat Keterangan Pertanahan'])
+                ->count();
+                $monthsp = SuratPelayanan::where('id_users',$user->id)->whereMonth('tanggal_surat',Carbon::now())
+                ->whereNotIn('nama_jenis_surat_pelayanan',['Surat Pernyataan Ahli Waris','Surat Keterangan Cerai Ghaib','Surat Keterangan Pertanahan'])
+                ->count();
+                $thisyearsp = SuratPelayanan::where('id_users',$user->id)->whereYear('tanggal_surat',Carbon::now()->format('Y'))
+                ->whereNotIn('nama_jenis_surat_pelayanan',['Surat Pernyataan Ahli Waris','Surat Keterangan Cerai Ghaib','Surat Keterangan Pertanahan'])
+                ->count();
                 // $monthsplast = $thisyearsp-$monthsp;
                 $monthsplast = $thisyearsp;
+
+                //surat vital dashboard 2
+                $todaysv = SuratPelayanan::where('id_users',$user->id)->whereDate('tanggal_surat',Carbon::today())
+                ->whereIn('nama_jenis_surat_pelayanan',['Surat Pernyataan Ahli Waris','Surat Keterangan Cerai Ghaib','Surat Keterangan Pertanahan'])
+                ->count();
+                $weeksv = SuratPelayanan::where('id_users',$user->id)->where('tanggal_surat', '>', Carbon::now()->startOfWeek())
+                ->where('tanggal_surat', '<', Carbon::now()->endOfWeek())
+                ->whereIn('nama_jenis_surat_pelayanan',['Surat Pernyataan Ahli Waris','Surat Keterangan Cerai Ghaib','Surat Keterangan Pertanahan'])
+                ->count();
+                $monthsv = SuratPelayanan::where('id_users',$user->id)->whereMonth('tanggal_surat',Carbon::now())
+                ->whereIn('nama_jenis_surat_pelayanan',['Surat Pernyataan Ahli Waris','Surat Keterangan Cerai Ghaib','Surat Keterangan Pertanahan'])
+                ->count();
+                $thisyearsv = SuratPelayanan::where('id_users',$user->id)->whereYear('tanggal_surat',Carbon::now()->format('Y'))
+                ->whereIn('nama_jenis_surat_pelayanan',['Surat Pernyataan Ahli Waris','Surat Keterangan Cerai Ghaib','Surat Keterangan Pertanahan'])
+                ->count();
+                // $monthsplast = $thisyearsp-$monthsp;
+                $monthsvlast = $thisyearsv;
+
+                // dd($todaysv);
+                // return $todaysv;
             }
                 
         if(Auth::user()->role == 'admin') {
@@ -96,17 +130,19 @@ class HomeController extends Controller
             return view('dashboard-supervisor')->with(compact(
                 'todaysm', 'weeksm', 'monthsm','monthsmlast',
                 'todaysk', 'weeksk', 'monthsk','monthsklast',
-                'todaysp', 'weeksp', 'monthsp','monthsplast'
+                'todaysp', 'weeksp', 'monthsp','monthsplast',
+                'todaysv', 'weeksv', 'monthsv','monthsvlast',
             ));
 
-        } elseif(Auth::user()->role == 'operator') {
+        } 
+        // elseif(Auth::user()->role == 'operator') {
 
-            return view('dashboard-operator')->with(compact(
-                'todaysm', 'weeksm', 'monthsm','monthsmlast',
-                'todaysk', 'weeksk', 'monthsk','monthsklast',
-                'todaysp', 'weeksp', 'monthsp','monthsplast'
-            ));
+        //     return view('dashboard-operator')->with(compact(
+        //         'todaysm', 'weeksm', 'monthsm','monthsmlast',
+        //         'todaysk', 'weeksk', 'monthsk','monthsklast',
+        //         'todaysp', 'weeksp', 'monthsp','monthsplast'
+        //     ));
 
-        }
+        // }
     }
 }

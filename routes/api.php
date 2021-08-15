@@ -28,5 +28,4 @@ Route::post('/upload-berkas/{id}/{module}','BerkasController@update')->name('upl
 Route::apiResource('/master-user','masteruser\LoginUserController');
 
 //list
-Route::post('list-suratpelayanan','API\ListController@listSuratPelayanan');
 Route::post('list-jabatan','API\ListController@listJabatan');

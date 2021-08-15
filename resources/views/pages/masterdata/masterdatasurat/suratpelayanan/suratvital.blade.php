@@ -17,7 +17,7 @@
 		<div class="panel-body">
 			@if(Auth::user()->role == "admin" || Auth::user()->role == "operator")<div id="gridDeleteSelected"></div>@endif
 			<div id="popup"></div>
-			@if(Auth::user()->role == "supervisor" && (Auth::user()->jabatan == "Kasi Pemerintahan & PP" || Auth::user()->jabatan == "Kasi Trantip & LH"))
+			@if(Auth::user()->role == "supervisor" && (Auth::user()->jabatan == "Kasi Trantip & LH"))
 				<h1>Anda Tidak Memiliki Akses</h1>
 			@else
 				<div id="grid-suratvital" style="height: 550px; width:100%;"></div>

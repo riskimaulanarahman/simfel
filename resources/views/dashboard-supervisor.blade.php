@@ -41,7 +41,7 @@
 			</div>
 		</div>
 		<div class="col-xl-3 col-md-6">
-			<div class="widget widget-stats bg-orange">
+			<div class="widget widget-stats bg-indigo">
 				<div class="stats-icon stats-icon-lg"><i class="fa fa-book"></i></div>
 				<div class="stats-content">
 					<div class="stats-title">SURAT PELAYANAN</div>
@@ -53,6 +53,23 @@
 						<li>Hari ini : <b>{{$todaysp}}</b></li>
 						<li>Minggu ini : <b>{{$weeksp}}</b></li>
 						<li>Bulan ini : <b>{{$monthsp}}</b></li>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-xl-3 col-md-6">
+			<div class="widget widget-stats bg-purple">
+				<div class="stats-icon stats-icon-lg"><i class="fa fa-book"></i></div>
+				<div class="stats-content">
+					<div class="stats-title">SURAT VITAL</div>
+					<div class="stats-number">{{$monthsvlast}}</div>
+					<div class="stats-progress progress">
+						<div class="progress-bar" style="width: 100%;"></div>
+					</div>
+					<div class="stats-desc">
+						<li>Hari ini : <b>{{$todaysv}}</b></li>
+						<li>Minggu ini : <b>{{$weeksv}}</b></li>
+						<li>Bulan ini : <b>{{$monthsv}}</b></li>
 					</div>
 				</div>
 			</div>

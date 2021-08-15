@@ -96,7 +96,18 @@
             key: "id_jenis_surat_pelayanan",
             loadMode: "raw",
             load: function() {
-                return $.post(apiurl + "/list-suratpelayanan");
+                return $.post(apiurl + "/list-suratpelayanan"+'?_token=' + '{{ csrf_token() }}');
+            }
+        }),
+        sort: "nama_jenis_surat_pelayanan"
+    }
+
+    listSuratvital = {
+        store: new DevExpress.data.CustomStore({
+            key: "id_jenis_surat_pelayanan",
+            loadMode: "raw",
+            load: function() {
+                return $.post(apiurl + "/list-suratvital"+'?_token=' + '{{ csrf_token() }}');
             }
         }),
         sort: "nama_jenis_surat_pelayanan"

@@ -146,7 +146,9 @@ $(document).ready(function(){
                     dataField: "tanggal_surat",
                     width: 150,
                     sortIndex: 0, sortOrder: "desc",
-                    dataType:"date", format:"dd-MM-yyyy"
+                    dataType:"date", format:"dd-MM-yyyy",
+                    validationRules: [{ type: "required" }]
+
                 },{ 
                     dataField: "tujuan_surat",
                     width: 150,
