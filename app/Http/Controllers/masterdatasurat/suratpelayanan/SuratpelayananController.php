@@ -22,6 +22,18 @@ class SuratpelayananController extends Controller
                 whereNotIn('nama_jenis_surat_pelayanan',['Surat Pernyataan Ahli Waris','Surat Keterangan Cerai Ghaib','Surat Keterangan Pertanahan'])
                 ->with('users')
                 ->get();
+
+                if($user->role !== 'admin') {
+                    $data = SuratPelayanan::
+                    where('id_users',$user->id)
+                    ->whereNotIn('nama_jenis_surat_pelayanan',['Surat Pernyataan Ahli Waris','Surat Keterangan Cerai Ghaib','Surat Keterangan Pertanahan'])
+                    ->with('users')
+                    ->get();
+                } else {
+                    $data = SuratPelayanan::
+                    whereNotIn('nama_jenis_surat_pelayanan',['Surat Pernyataan Ahli Waris','Surat Keterangan Cerai Ghaib','Surat Keterangan Pertanahan'])
+                    ->with('users')->get();
+                }
         
 
             return response()->json(['status' => "show", "message" => "Menampilkan Data" , 'data' => $data]);
