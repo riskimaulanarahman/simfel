@@ -15,7 +15,7 @@
 			</div>
 		</div>
 		<div class="panel-body">
-			@if(Auth::user()->role == "admin" || Auth::user()->role == "operator")<div id="gridDeleteSelected"></div>@endif
+			@if(Auth::user()->role == "admin")<div id="gridDeleteSelected"></div>@endif
 			<div id="popup"></div>
 			<div id="grid-suratkeluar" style="height: 550px; width:100%;"></div>
 		</div>
