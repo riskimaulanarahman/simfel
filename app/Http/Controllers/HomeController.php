@@ -25,7 +25,7 @@ class HomeController extends Controller
             $kasitrantip = User::where('jabatan','Kasi Trantip & LH')->first();
             $kasipemberdayaan = User::where('jabatan','Kasi Pemberdayaan Masyarakat')->first();
 
-            if($user->role == 'admin') {
+            if($user->role == 'admin' || $user->role == 'operator') {
 
                 // surat masuk start
                 $todaysm = SuratMasuk::whereDate('tanggal_terima_surat',Carbon::today())->count();
@@ -244,7 +244,7 @@ class HomeController extends Controller
                 'totalsv','totalsv1', 'totalsv2', 'totalsv3','totalsv4',
             ));
 
-        } elseif(Auth::user()->role == 'supervisor') {
+        } else if(Auth::user()->role == 'supervisor') {
 
             return view('dashboard-supervisor')->with(compact(
                 'todaysm', 'weeksm', 'monthsm','monthsmlast',
@@ -253,15 +253,30 @@ class HomeController extends Controller
                 'todaysv', 'weeksv', 'monthsv','monthsvlast',
             ));
 
-        } 
-        // elseif(Auth::user()->role == 'operator') {
+        } else if(Auth::user()->role == 'operator') {
+            
+            return view('dashboard-admin')->with(compact(
+                'todaysm1', 'todaysm2', 'todaysm3','todaysm4',
+                'weeksm1', 'weeksm2', 'weeksm3','weeksm4',
+                'monthsm1', 'monthsm2', 'monthsm3','monthsm4',
+                'totalsm','totalsm1', 'totalsm2', 'totalsm3','totalsm4',
 
-        //     return view('dashboard-operator')->with(compact(
-        //         'todaysm', 'weeksm', 'monthsm','monthsmlast',
-        //         'todaysk', 'weeksk', 'monthsk','monthsklast',
-        //         'todaysp', 'weeksp', 'monthsp','monthsplast'
-        //     ));
+                'todaysk1', 'todaysk2', 'todaysk3','todaysk4',
+                'weeksk1', 'weeksk2', 'weeksk3','weeksk4',
+                'monthsk1', 'monthsk2', 'monthsk3','monthsk4',
+                'totalsk','totalsk1', 'totalsk2', 'totalsk3','totalsk4',
 
-        // }
+                'todaysp1', 'todaysp2', 'todaysp3','todaysp4',
+                'weeksp1', 'weeksp2', 'weeksp3','weeksp4',
+                'monthsp1', 'monthsp2', 'monthsp3','monthsp4',
+                'totalsp','totalsp1', 'totalsp2', 'totalsp3','totalsp4',
+
+                'todaysv1', 'todaysv2', 'todaysv3','todaysv4',
+                'weeksv1', 'weeksv2', 'weeksv3','weeksv4',
+                'monthsv1', 'monthsv2', 'monthsv3','monthsv4',
+                'totalsv','totalsv1', 'totalsv2', 'totalsv3','totalsv4',
+            ));
+
+        }
     }
 }

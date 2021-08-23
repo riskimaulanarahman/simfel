@@ -20,7 +20,7 @@ class SuratmasukController extends Controller
     {
         $user = Auth::user();
         try {
-            if($user->role !== 'admin') {
+            if($user->role == 'supervisor') {
                 $data = SuratMasuk::where('id_users',$user->id)->get();
             } else {
                 $data = SuratMasuk::with('users')->get();

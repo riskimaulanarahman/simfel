@@ -15,7 +15,7 @@
 		<!-- begin brand -->
 		<div class="login-header">
 			<div class="brand">
-				<span class="logo"></span> <b>SIMFEL</b> Balikpapan
+				<span class="logo"></span> <b>SIMFLE</b> Balikpapan
 				<small>Sistem Informasi Management File</small>
 			</div>
 			<div class="icon">

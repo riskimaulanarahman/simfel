@@ -17,23 +17,17 @@ return [
             'icon' => 'fa fa-th-large',
             'title' => 'Dashboard',
             'url' => '/',
+            'route-name' => 'admin.index'
         ],[
-            'icon' => 'fa fa-hdd',
-            'title' => 'Master Data',
+            'icon' => 'fa fa-file-alt',
+            'title' => 'Master Surat',
             'url' => 'javascript:;',
             'caret' => true,
             'sub_menu' => [
                 [
-                    'url' => 'javascript:;',
-                    'title' => 'Master Data Penduduk'
-                ],[
-                'url' => 'javascript:;',
-                'title' => 'Master Data Surat',
-                'sub_menu' => [[
                     'url' => '/surat-masuk',
                     'title' => 'Surat Masuk',
                     'route-name' => 'admin.suratmasuk'
-
                 ],[
                     'url' => '/surat-keluar',
                     'title' => 'Surat Keluar',
@@ -42,12 +36,16 @@ return [
                     'url' => '/surat-pelayanan',
                     'title' => 'Surat Pelayanan',
                     'route-name' => 'admin.suratpelayanan'
+                ],[
+                    'url' => '/surat-vital',
+                    'title' => 'Surat Vital',
+                    'route-name' => 'admin.suratvital'
                 ]]
-            ]]
         ],[
             'icon' => 'fa fa-question-circle',
             'title' => 'Bantuan',
             'url' => '/bantuan',
+            'route-name' => 'admin.bantuan'
         ]
     ]
 ];

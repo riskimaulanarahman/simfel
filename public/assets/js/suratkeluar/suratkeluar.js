@@ -174,7 +174,7 @@ $(document).ready(function(){
                     dataField: "lampiran",
                     width: 150,
                     formItem: {visible:false},
-                    fixed: false,
+                    fixed: true,
                     fixedPosition: "right",
                     editorOptions: {
                         disabled: true

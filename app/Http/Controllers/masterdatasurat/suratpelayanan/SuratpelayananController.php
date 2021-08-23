@@ -23,7 +23,7 @@ class SuratpelayananController extends Controller
                 ->with('users')
                 ->get();
 
-                if($user->role !== 'admin') {
+                if($user->role == 'supervisor') {
                     $data = SuratPelayanan::
                     where('id_users',$user->id)
                     ->whereNotIn('nama_jenis_surat_pelayanan',['Surat Pernyataan Ahli Waris','Surat Keterangan Cerai Ghaib','Surat Keterangan Pertanahan'])

@@ -18,7 +18,7 @@ class SuratkeluarController extends Controller
     {
         $user = Auth::user();
         try {
-            if($user->role !== 'admin') {
+            if($user->role == 'supervisor') {
                 $data = SuratKeluar::where('id_users',$user->id)->get();
             } else {
                 $data = SuratKeluar::with('users')->get();

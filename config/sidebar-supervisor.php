@@ -17,6 +17,7 @@ return [
             'icon' => 'fa fa-th-large',
             'title' => 'Dashboard',
             'url' => '/',
+            'route-name' => 'admin.index'
         ],[
             'icon' => 'fa fa-hdd',
             'title' => 'Master Data',
@@ -53,6 +54,7 @@ return [
             'icon' => 'fa fa-question-circle',
             'title' => 'Bantuan',
             'url' => '/bantuan',
+            'route-name' => 'admin.bantuan'
         ]
     ]
 ];

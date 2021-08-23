@@ -41,7 +41,7 @@
         editing: {
             useIcons:true,
             mode: "popup",
-            allowAdding: false,
+            allowAdding: true,
             allowUpdating: true,
             allowDeleting: false,
             popup: {
