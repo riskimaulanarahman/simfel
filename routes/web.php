@@ -35,6 +35,7 @@ Route::group( ['as' => 'admin.','middleware' => ['auth']], function() {
     Route::get('/master-user','masteruser\LoginUserController@show')->name('masteruser');
 
     Route::get('/bantuan', 'MainController@bantuan')->name('bantuan');
+    Route::get('/sop', 'MainController@sop')->name('sop');
 
     //api
     Route::apiResource('/api/surat-masuk','masterdatasurat\suratmasuk\SuratmasukController');

@@ -156,6 +156,7 @@ $(document).ready(function(){
                     dataType:"date", format:"dd-MM-yyyy",
                     validationRules: [{ type: "required" }]
                 },{ 
+                    caption: "Nama Pejabat Penanda Tangan",
                     dataField: "nama_pejabat_pembuat",
                     width: 150,
                 },{ 

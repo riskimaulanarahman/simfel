@@ -34,17 +34,17 @@ class ListController extends Controller
         if($user->role == 'supervisor' && $user->jabatan == 'Kasi Pemerintahan & PP') {
             $data = DB::table('ref_jenis_surat_pelayanan')
             ->select('id_jenis_surat_pelayanan','nama_jenis_surat_pelayanan')
-            ->whereIn('nama_jenis_surat_pelayanan',['Surat Keterangan Pertanahan'])
+            ->whereIn('nama_jenis_surat_pelayanan',['Surat Keterangan Pertanahan','Surat Keterangan Lainnya'])
             ->get();
         } else if($user->role == 'supervisor' && $user->jabatan == 'Kasi Pemberdayaan Masyarakat') {
             $data = DB::table('ref_jenis_surat_pelayanan')
             ->select('id_jenis_surat_pelayanan','nama_jenis_surat_pelayanan')
-            ->whereIn('nama_jenis_surat_pelayanan',['Surat Pernyataan Ahli Waris','Surat Keterangan Cerai Ghaib'])
+            ->whereIn('nama_jenis_surat_pelayanan',['Surat Pernyataan Ahli Waris','Surat Keterangan Cerai Ghaib','Surat Keterangan Lainnya'])
             ->get();
         } else {
             $data = DB::table('ref_jenis_surat_pelayanan')
             ->select('id_jenis_surat_pelayanan','nama_jenis_surat_pelayanan')
-            ->whereIn('nama_jenis_surat_pelayanan',['Surat Pernyataan Ahli Waris','Surat Keterangan Cerai Ghaib','Surat Keterangan Pertanahan'])
+            ->whereIn('nama_jenis_surat_pelayanan',['Surat Pernyataan Ahli Waris','Surat Keterangan Cerai Ghaib','Surat Keterangan Pertanahan','Surat Keterangan Lainnya'])
             ->get();
         }
 

@@ -8,6 +8,10 @@ class MainController extends Controller {
         return view('pages/bantuan/home-bantuan');
     }
 
+    public function sop() {
+        return view('pages/bantuan/sop');
+    }
+
     public function dashboardV1() {
         return view('pages/dashboard-v1');
     }

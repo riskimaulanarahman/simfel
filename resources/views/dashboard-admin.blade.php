@@ -10,7 +10,7 @@
 			<div class="widget widget-stats bg-teal">
 				<div class="stats-icon stats-icon-lg"><i class="fa fa-caret-square-down"></i></div>
 				<div class="stats-content">
-					<div class="stats-title">TOTAL SURAT MASUK (ALL)</div>
+					<div class="stats-title">TOTAL AGENDA SURAT MASUK (ALL)</div>
 					<div class="stats-number">{{$totalsm}}</div>
 					<div class="stats-progress progress">
 						<div class="progress-bar" style="width: 100%;"></div>
@@ -64,7 +64,7 @@
 			<div class="widget widget-stats bg-red">
 				<div class="stats-icon stats-icon-lg"><i class="fa fa-caret-square-up"></i></div>
 				<div class="stats-content">
-					<div class="stats-title">TOTAL SURAT KELUAR (ALL)</div>
+					<div class="stats-title">TOTAL AGENDA SURAT KELUAR (ALL)</div>
 					<div class="stats-number">{{$totalsk}}</div>
 					<div class="stats-progress progress">
 						<div class="progress-bar" style="width: 100%;"></div>
@@ -118,7 +118,7 @@
 			<div class="widget widget-stats bg-indigo">
 				<div class="stats-icon stats-icon-lg"><i class="fa fa-book"></i></div>
 				<div class="stats-content">
-					<div class="stats-title">TOTAL SURAT PELAYANAN (ALL)</div>
+					<div class="stats-title">TOTAL AGENDA SURAT PELAYANAN (ALL)</div>
 					<div class="stats-number">{{$totalsp}}</div>
 					<div class="stats-progress progress">
 						<div class="progress-bar" style="width: 100%;"></div>
@@ -172,7 +172,7 @@
 			<div class="widget widget-stats bg-purple">
 				<div class="stats-icon stats-icon-lg"><i class="fa fa-book"></i></div>
 				<div class="stats-content">
-					<div class="stats-title">TOTAL SURAT VITAL (ALL)</div>
+					<div class="stats-title">TOTAL AGENDA SURAT PENTING (ALL)</div>
 					<div class="stats-number">{{$totalsv}}</div>
 					<div class="stats-progress progress">
 						<div class="progress-bar" style="width: 100%;"></div>

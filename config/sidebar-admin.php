@@ -44,19 +44,19 @@ return [
                 'sub_menu' => [
                     [
                         'url' => '/surat-masuk',
-                        'title' => 'Surat Masuk',
+                        'title' => 'Agenda Surat Masuk',
                         'route-name' => 'admin.suratmasuk'
                     ],[
                         'url' => '/surat-keluar',
-                        'title' => 'Surat Keluar',
+                        'title' => 'Agenda Surat Keluar',
                         'route-name' => 'admin.suratkeluar'
                     ],[
                         'url' => '/surat-pelayanan',
-                        'title' => 'Surat Pelayanan',
+                        'title' => 'Agenda Surat Pelayanan',
                         'route-name' => 'admin.suratpelayanan'
                     ],[
                         'url' => '/surat-vital',
-                        'title' => 'Surat Vital',
+                        'title' => 'Agenda Surat Penting',
                         'route-name' => 'admin.suratvital'
                     ]]
             ],[
@@ -79,9 +79,10 @@ return [
                         'title' => 'Daftar Arsip Pelayanan',
                     ]]
         ],[
-            'icon' => 'fa fa-file',
+            'icon' => 'fa fa-question-circle',
             'title' => 'SOP',
-            'url' => 'javascript:;',
+            'url' => '/sop',
+            'route-name' => 'admin.sop'
         ],[
                 'icon' => 'fa fa-archive',
                 'title' => 'Tabel Referensi',

@@ -1,6 +1,6 @@
 @extends('layouts.default', ['sidebarSearch' => true])
 
-@section('title', 'Master User')
+@section('title', 'SOP')
 
 @section('content')
 
@@ -11,7 +11,7 @@
 		<div class="panel panel-inverse">
 			<!-- begin panel-heading -->
 			<div class="panel-heading">
-				<h4 class="panel-title">Panduan </h4>
+				<h4 class="panel-title">SOP - SIMFLE </h4>
 				<div class="panel-heading-btn">
 					<!-- <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a> -->
 					<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success reloadalltabel"
@@ -24,7 +24,7 @@
 			<!-- end panel-heading -->
 			<!-- begin panel-body -->
 			<div class="panel-body">
-                <embed src="upload/bantuan/panduansimfle.pdf" width="100%" height="2100px" />
+                <embed src="upload/bantuan/sop.pdf" width="100%" height="2100px" />
 			</div>
 			<!-- end panel-body -->
 		</div>

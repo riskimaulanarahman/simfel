@@ -137,6 +137,7 @@ $(document).ready(function(){
                     }
                 },
                 { 
+                    caption: "Dasar Surat",
                     dataField: "nomor_surat_rujukan",
                     width: 150,
                 },{ 
@@ -156,6 +157,7 @@ $(document).ready(function(){
                     dataField: "tembusan_surat",
                     width: 150,
                 },{ 
+                    caption: "Sifat Surat",
                     dataField: "klasifikasi_surat",
                     width: 150,
                 },{ 
